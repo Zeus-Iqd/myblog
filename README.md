@@ -10,7 +10,7 @@
 
 A blog starter with Material design in mind for [Gatsby](https://github.com/gatsbyjs/gatsby/).
 
-[Demo website.](https://github.com/Zeus-Iqd/myblog/blob/)
+[Demo website.](https://zeus-iqd.github.io/myblog/)
 
 ![Screenshot](docs/screenshot.png)
 

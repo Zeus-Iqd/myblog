@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: "Gatsby Material Starter", // Site title.
+  siteTitle: "个人博客", // Site title.
   siteTitleShort: "GM Starter", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "GatsbyJS Material Starter", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
