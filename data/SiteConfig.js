@@ -24,17 +24,17 @@ module.exports = {
   userLinks: [
     {
       label: "GitHub",
-      url: "https://github.com/Vagr9K/gatsby-material-starter",
+      url: "https://github.com/Zeus-Iqd",
       iconClassName: "fa fa-github"
     },
-    {
-      label: "Twitter",
-      url: "https://twitter.com/Vagr9K",
-      iconClassName: "fa fa-twitter"
-    },
+    // {
+    //   label: "Twitter",
+    //   url: "https://twitter.com/Vagr9K",
+    //   iconClassName: "fa fa-twitter"
+    // },
     {
       label: "Email",
-      url: "mailto:vagr9k@gmail.com",
+      url: "mailto:zeusIqd@163.com",
       iconClassName: "fa fa-envelope"
     }
   ],
