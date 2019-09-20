@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 function GetNavList(config) {
   const NavList = [
     {
-      primaryText: "主页",
+      primaryText: "Home",
       leftIcon: <FontIcon>home</FontIcon>,
       component: Link,
       to: "/"
@@ -29,7 +29,7 @@ function GetNavList(config) {
   NavList.push({ divider: true });
 
   NavList.push({
-    primaryText: "关于我",
+    primaryText: "About",
     leftIcon: <FontIcon>person</FontIcon>,
     component: Link,
     to: "/about/"

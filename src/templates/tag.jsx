@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
+import PostListing from "../components/PostListing";
 import config from "../../data/SiteConfig";
 
 export default class TagTemplate extends React.Component {
@@ -11,7 +11,10 @@ export default class TagTemplate extends React.Component {
     const postEdges = this.props.data.allMarkdownRemark.edges;
 
     return (
-      <Layout location={this.props.location}>
+      <Layout
+        location={this.props.location}
+        title={`Tagged in ${tag.charAt(0).toUpperCase() + tag.slice(1)}`}
+      >
         <div className="tag-container">
           <Helmet>
             <title>{`Posts tagged as "${tag}" | ${config.siteTitle}`}</title>

@@ -10,7 +10,7 @@
 
 A blog starter with Material design in mind for [Gatsby](https://github.com/gatsbyjs/gatsby/).
 
-[Demo website.](https://zeus-iqd.github.io/myblog/)
+[Demo website.](https://vagr9k.github.io/gatsby-material-starter/)
 
 ![Screenshot](docs/screenshot.png)
 
@@ -18,7 +18,7 @@ A blog starter with Material design in mind for [Gatsby](https://github.com/gats
 
 This starter is based on GatsbyJS V2, which brings progressive web app features such as automatic code and data splitting (by route), prefetching, with service worker/offline-first support and PRPL pattern.
 
-More information in the [announcement](https://www.gatsbyjs.org/blog/2018-06-16-announcing-gatsby-v2-beta-launch/).
+More information in the [announcement](https://www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/).
 
 NOTE: You can access the v1 version of the starter via the [`v1` branch](https://github.com/Vagr9K/gatsby-material-starter/tree/v1).
 
@@ -47,7 +47,7 @@ NOTE: You can access the v1 version of the starter via the [`v1` branch](https:/
   - Embedded YouTube videos
   - Embedded Tweets
 - Tags
-  - Seprate page for posts under each tag
+  - Separate page for posts under each tag
 - Categories
   - Separate page for posts under each category
 - Suggested posts segment
@@ -163,7 +163,7 @@ module.exports = {
       iconClassName: "fa fa-envelope"
     }
   ],
-  copyright: "Copyright © 2017. Material User" // Copyright string for the footer of the website and RSS feed.
+  copyright: "Copyright © 2019. Material User" // Copyright string for the footer of the website and RSS feed.
 };
 ```
 

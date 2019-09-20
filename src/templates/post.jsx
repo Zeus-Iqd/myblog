@@ -4,14 +4,14 @@ import { graphql } from "gatsby";
 import Card from "react-md/lib/Cards";
 import CardText from "react-md/lib/Cards/CardText";
 import Layout from "../layout";
-import UserInfo from "../components/UserInfo/UserInfo";
-import Disqus from "../components/Disqus/Disqus";
-import PostTags from "../components/PostTags/PostTags";
-import PostCover from "../components/PostCover/PostCover";
-import PostInfo from "../components/PostInfo/PostInfo";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
-import PostSuggestions from "../components/PostSuggestions/PostSuggestions";
-import SEO from "../components/SEO/SEO";
+import UserInfo from "../components/UserInfo";
+import Disqus from "../components/Disqus";
+import PostTags from "../components/PostTags";
+import PostCover from "../components/PostCover";
+import PostInfo from "../components/PostInfo";
+import SocialLinks from "../components/SocialLinks";
+import PostSuggestions from "../components/PostSuggestions";
+import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.scss";
@@ -24,6 +24,7 @@ export default class PostTemplate extends React.Component {
     };
     this.handleResize = this.handleResize.bind(this);
   }
+
   componentDidMount() {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
@@ -43,11 +44,13 @@ export default class PostTemplate extends React.Component {
 
   render() {
     const { mobile } = this.state;
-    const { slug } = this.props.pageContext;
+    const { location, pageContext } = this.props;
+    const { slug, nexttitle, nextslug, prevtitle, prevslug } = pageContext;
     const expanded = !mobile;
     const postOverlapClass = mobile ? "post-overlap-mobile" : "post-overlap";
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
+
     if (!post.id) {
       post.id = slug;
     }
@@ -57,7 +60,7 @@ export default class PostTemplate extends React.Component {
 
     const coverHeight = mobile ? 180 : 350;
     return (
-      <Layout location={this.props.location}>
+      <Layout location={location}>
         <div className="post-page md-grid md-grid--no-spacing">
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
@@ -83,7 +86,7 @@ export default class PostTemplate extends React.Component {
                 <SocialLinks
                   postPath={slug}
                   postNode={postNode}
-                  mobile={this.state.mobile}
+                  mobile={mobile}
                 />
               </div>
             </Card>
@@ -95,7 +98,12 @@ export default class PostTemplate extends React.Component {
             <Disqus postNode={postNode} expanded={expanded} />
           </div>
 
-          <PostSuggestions postNode={postNode} />
+          <PostSuggestions
+            prevSlug={prevslug}
+            prevTitle={prevtitle}
+            nextSlug={nextslug}
+            nextTitle={nexttitle}
+          />
         </div>
       </Layout>
     );
@@ -116,10 +124,6 @@ export const pageQuery = graphql`
         tags
       }
       fields {
-        nextTitle
-        nextSlug
-        prevTitle
-        prevSlug
         slug
         date
       }
